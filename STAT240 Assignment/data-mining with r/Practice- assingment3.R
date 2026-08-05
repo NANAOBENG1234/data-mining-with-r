@@ -20,3 +20,21 @@ describe_vector <- function(x){
 }
 describe_vector(weight)
 
+
+
+
+
+#=========================  Question 2 =========
+
+
+rectangle_measure <- function(side){
+  perimeter = 4*side
+  area = side^2
+  result <- list(
+    Perimeter = perimeter,
+    Area = area
+    
+  )
+  return(result)
+}
+rectangle_measure(9)
