@@ -38,3 +38,31 @@ rectangle_measure <- function(side){
   return(result)
 }
 rectangle_measure(9)
+
+
+
+
+
+
+
+#========question 3
+
+grade_student <- function(score){
+  if(score >= 80 ){
+    print("A")
+  }else if(score>= 70){
+    print("B")
+  }else if(score>= 60){
+    print("C")
+  }else if(score >= 50){
+    print("D")
+  }else{
+    print("F")
+  }
+  return(grade)
+}
+grade_student(45)
+grade_student(61)
+grade_student(75)
+grade_student(88)
+grade_student(100)
