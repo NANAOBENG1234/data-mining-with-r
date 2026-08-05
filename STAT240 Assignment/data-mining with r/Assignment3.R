@@ -1,14 +1,14 @@
 #=============QUESTION ONE =======================
 
 
-Survey <- c(21,25,18,30,29,22,24,27,20,23)
+data<- c(21,25,18,30,29,22,24,27,20,23)
 
 summary_stat <- function(x){
   result = list(
     n = length(x),
     Mean  = mean(x),
     Median = median(x),
-    Maxmimum = max(x),
+    Maximum = max(x),
     Mininmum = min(x),
     Varaince = var(x),
     sd = sd(x),
@@ -18,8 +18,8 @@ summary_stat <- function(x){
   )
   return(result)
 }
-# 
-summary_stat(Survey)
+ 
+summary_stat(data)
 
 
 
@@ -42,3 +42,30 @@ circle_measure <- function(radius){
 circle_measure(3)
 circle_measure(7.5)
 circle_measure(10)
+
+
+
+
+#========question 3
+
+grade_student <- function(score){
+  if(score >= 80 ){
+    print("A")
+  }else if(score>= 70){
+    print("B")
+  }else if(score>= 60){
+    print("C")
+  }else if(score >= 50){
+    print("D")
+  }else{
+    print("F")
+  }
+  return(grade)
+}
+grade_student(45)
+grade_student(61)
+grade_student(75)
+grade_student(88)
+grade_student(100)
+
+
