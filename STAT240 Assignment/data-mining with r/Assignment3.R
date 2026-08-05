@@ -18,6 +18,27 @@ summary_stat <- function(x){
   )
   return(result)
 }
-
+# 
 summary_stat(Survey)
 
+
+
+
+
+
+  
+
+##===================Question 2=======
+
+circle_measure <- function(radius){
+  area = pi*(radius^2)
+  circumference = 2*pi*radius
+  result <- list(
+    Area = area,
+    Circumference = circumference
+  )
+  return(result)
+}
+circle_measure(3)
+circle_measure(7.5)
+circle_measure(10)
