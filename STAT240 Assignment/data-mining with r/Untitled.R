@@ -122,7 +122,22 @@ names(cabbages)
 t.test(cabbages$HeadWt, alternative = "less", 
       mu = 2.84) 
  
+ ##======= To get the critical value============ 
  
- 
- 
+ qt(0.05,59)
+
+
+
+t.test(cabbages$HeadWt, alternative = "less", 
+       mu = 3.10  ) 
+
+
+## when H1 != we use the *two.sided* to reject the H0
+t.test(cabbages$HeadWt, alternative = "two.sided", 
+       mu = 3.10  )
+
+##=======For two sample 
+
+
+
  
