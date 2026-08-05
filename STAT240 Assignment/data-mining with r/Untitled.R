@@ -136,8 +136,23 @@ t.test(cabbages$HeadWt, alternative = "less",
 t.test(cabbages$HeadWt, alternative = "two.sided", 
        mu = 3.10  )
 
-##=======For two sample 
+##=======For two sample T-test======
+
+# H0: U_c39 = U_c52
+#H1: U_c39 < U_c52
+ t.test(HeadWt~Cult, data = cabbages, 
+        alternative ="less")
+## Test of equality of variance
 
 
+#===========Test Of Variance======
+## When variance1 = 2 and H1 : v1 != v2
+library(car)
+?leveneTest
+leveneTest(HeadWt~Cult, data = cabbages,
+           var.equal = TRUE)
 
- 
+##Other variablity test 
+#--------------
+
+## READ ON 
