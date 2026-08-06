@@ -62,6 +62,7 @@ grade_student <- function(score){
   }
   return(grade)
 }
+
 grade_student(45)
 grade_student(61)
 grade_student(75)
