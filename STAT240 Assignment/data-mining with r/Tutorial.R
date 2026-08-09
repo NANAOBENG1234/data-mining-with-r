@@ -234,3 +234,4 @@ pie3D(survived_table,
       labels = paste(names(survived_table), "-", round(100*survived_table/sum(survived_table), 1), "%"),
       col = c("red", "green"),
       explode = 0.1)
+
