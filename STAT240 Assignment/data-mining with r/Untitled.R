@@ -156,4 +156,36 @@ leveneTest(HeadWt~Cult, data = cabbages,
 #--------------
 
 ## READ ON 
+summary(cabbages$HeadWt)
+t.test(cabbages$HeadWt, data= cabbages, alternetive= "greater", 
+        mu = 3.4)
+qt(0.05,59)
+
+
+
+library(MASS)
+?MASS
+?anorexia
+summary(anorexia)
+t.test(anorexia$Prewt,
+       anorexia$Postwt, Alternative = "two.sided", paired = TRUE)
+
+qt(0.05,71)
+##If your p value is less than Alpha value we reject the null hypothesis
+
+
+
+##More than 2 Samples
+##====0ne-Way - ANOVA- 
+#Hypothesis
+#h_0 = all the means are equal 
+#h_1= at the least one differ 
+#=== for this we use aov package
+# When your reject the h_0 We perform another test, to know which mean is different 
+#y has to be quantitative and x be your qualitative
+?aov
+summary(anorexia)
+
+Anoval<-aov(Postwt~Treat, data = anorexia)
+summary(Anoval)#=====This give as the exact table 
 
