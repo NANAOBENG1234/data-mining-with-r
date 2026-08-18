@@ -31,3 +31,18 @@ rownames(Drivers)<-c("Ben", "Aristo","Nana obeng")
 colnames(Drivers)<-c("Mon", "Tues", "Wed", "Thu", "Fri", "Sat")
 rowSums(Drivers)
 colSums(Drivers)
+
+
+#creating a data frame we use data.frame
+kev<-data.frame(
+  age = c(20,21,23,34,54,NA),
+  Gender = c("M", "F","M","F","M","M"),
+  BloodType = c("A" , "BB", "AA", "O","B","AB"),
+  Recovered =c(TRUE,FALSE,TRUE,FALSE,TRUE,TRUE),
+  row.names=c("P1" ,"P2","P3","P4","P5","P6")
+)
+
+str(kev)
+summary(kev)
+kev$BloodType
+kev[2, "age"]
