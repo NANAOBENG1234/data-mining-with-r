@@ -23,7 +23,11 @@ snap<-seq(1,9, by = 3)
 snap
 snap<-rep(snap, times = 2 )
 
-snap<-matrix(c(12,32,45,3,2,21,
+Drivers <- matrix(c(12,32,45,3,2,21,
                12,34,54,66,6,7,
-               1,0,6,54,65,43,),
+               1,0,6,54,65,43),
              nrow = 3, byrow =TRUE)
+rownames(Drivers)<-c("Ben", "Aristo","Nana obeng")
+colnames(Drivers)<-c("Mon", "Tues", "Wed", "Thu", "Fri", "Sat")
+rowSums(Drivers)
+colSums(Drivers)
