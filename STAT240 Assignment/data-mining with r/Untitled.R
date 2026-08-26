@@ -182,6 +182,8 @@ qt(0.05,71)
 #h_1= at the least one differ 
 #=== for this we use aov package
 # When your reject the h_0 We perform another test, to know which mean is different 
+#===POSTHOC TEST
+#==1.HSD, 2Turkey HSD
 #y has to be quantitative and x be your qualitative
 ?aov
 summary(anorexia)
@@ -189,3 +191,32 @@ summary(anorexia)
 Anoval<-aov(Postwt~Treat, data = anorexia)
 summary(Anoval)#=====This give as the exact table 
 
+##Post hoc 
+post_Hoc<-TukeyHSD(Anoval)
+plot(post_Hoc)
+
+
+
+##===Test of normality===##
+##1-Q-Q plot 
+qqnorm(anorexia$Postwt,
+       col = "blue")
+qqline(anorexia$Postwt,
+      col ="red" )
+
+hist(anorexia$Postwt,
+     col = c("red", "blue", "yellow", "brown", "pink", "green", "black"))
+boxplot(anorexia$Postwt,
+        col = c("red", "blue", "yellow", "brown", "pink", "green", "black"))
+)
+summary(anorexia$Postwt)
+
+##Shapiro Wilk Test
+
+shapiro.test(anorexia$Postwt)   
+
+boxplot(Postwt~Treat, data = anorexia,
+        col = c("red", "blue", "yellow"))
+
+
+##Test for catergory variable 
