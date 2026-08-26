@@ -162,7 +162,194 @@ score_clean
 
 
 
-#g
+#g)
+mean(Score_clean)
+#[1] 79.25
+
+
+#H
+
+
+#Q2
+
+#A)
+customer<-matrix(c(18,21,16,20,
+                 25,19,22,24,
+                 15,23,20,17),
+                 nrow = 3, byrow =TRUE)
+rownames(customer)=c("Employee 1","Employee 2","Employee 3")
+colnames(customer)=c("Monday","Tuesday","Wednesday","Thurday")
+
+customer
+#           Monday Tuesday Wednesday Thurday
+#Employee 1     18      21        16      20
+#Employee 2     25      19        22      24
+#Employee 3     15      23        20      17
+
+#b)
+rowSums(customer)
+
+#Employee 1 Employee 2 Employee 3 
+#75         90         75 
+
+colSums(customer)
+# Monday   Tuesday Wednesday   Thurday 
+# 58        63        58        61 
+
+
+x<-t(customer)
+
+#          Employee 1 Employee 2 Employee 3
+#Monday            18         25         15
+#Tuesday           21         19         23
+#Wednesday         16         22         20
+#Thurday           20         24         17
+
+dim(x)
+#[1] 4 3
+
+
+#E)
+employees<-data.frame(
+  age =c(24,31,27),
+  Department =c("Sales","Marketing","Sales"),
+  Sactisfaction =c("High","Medium", "Low"),
+  row.names=c("E1","E2","E3")
+)
+
+employees
+#age Department Sactisfaction
+#E1  24      Sales          High
+#E2  31  Marketing        Medium
+#E3  27      Sales           Low
+
+str(employees)
+#'data.frame':	3 obs. of  3 variables:
+#$ age          : num  24 31 27
+#$ Department   : chr  "Sales" "Marketing" "Sales"
+#$ Sactisfaction: chr  "High" "Medium" "Low"
+
+summary(employees)
+
+#age            Department   Sactisfaction
+#Min.   :24.00   Length   :3    Length   :3    
+#1st Qu.:25.50   N.unique :2    N.unique :3    
+#Median :27.00   N.blank  :0    N.blank  :0    
+#Mean   :27.33   Min.nchar:5    Min.nchar:3    
+#3rd Qu.:29.00   Max.nchar:9    Max.nchar:6    
+#Max.   :31.00
+
+Satisfacction<-c("High","Medium","Low","High")
+Sat_factor<-factor(Satisfacction, levels=c("Low","Medium","High"), ordered = TRUE)
+#[1]1] High   Medium Low   
+#Levels: Low < Medium < High
+table(Sat_factor)
+#   Low Medium   High 
+#1      1      2 
+
+
+Sat_factor > "Low"
+#[1]  TRUE  TRUE FALSE  TRUE
+as.numeric(Sat_factor)
+
+
+
+
+
+
+
+file.choose()
+Data<-read.delim("C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.txt")
+names(Data)
+dim(Data)
+summary(Data)
+
+
+hist(Data$Age,
+     main = "A histogram of Age in the Data set",
+     xlab= "Ages",
+     ylab ="Frequency",
+     col =c("red", "black", "orange"),
+     xlim=c(0,100),
+     ylim = c(0,300)
+     
+     )
+
+boxplot(Data$Fare)
+plot(Data$Fare,Data$Age)
+
+
+
+#graph
+
+
+Scores<-c(45,52,67,71,58,83,76,91,64,55,72,88,49,61,79,68,95,57,73,84)
+
+Scores
+#[1] 45 52 67 71 58 83 76 91 64 55 72 88 49 61 79 68 95 57 73 84
+
+hist(Scores, main ="A Histogram of recorded Scores",
+     xlab = "Scores",
+     ylab = "Student",
+     xlim = c(30,120),
+     ylim=c(0,8),
+     col = c("brown",'red', "black","orange"))
+
+
+
+#the histogram display the relationship between the student and their scores , with the scores linked with range of students 
+
+boxplot(Scores,main= "A Boxplot of Recorded Scores",
+        col = "blue",
+        horizontal = TRUE,
+        xlab = "Scores"
+        )
+
+summary(Scores)
+
+
+
+
+
+?barplot
+barplot(Scores
+       
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Student<-data.frame(
+  StudyHours=c(2,3,4,5,5,6,7,8,9,10),
+  Score=c(48,55,61,65,70,72,78,81,88,92),
+  Gender =c("F", "M","F","M","F","M",
+            "F","M","F","M"),
+  row.names = c("S1","S2","S3","S4","S5","S6","S7","S8","S9","S10")
+)
+Student
+
+
+
+plot(Student$StudyHours, Student$Score, main= "scatter plot showing the relationship between Studyhours and Score",
+     col = "orange",
+     xlab = "Study hours",
+     ylab = " Score",
+abline(lm(Score ~ StudyHours, data = Student))
+)
+
+
 
 
 
@@ -229,6 +416,9 @@ col =c( "red","blue", "yellow","orange", "black", "purple")
 )
 
 
+
+
+
 hist(log(titanic_csv$Fare[titanic_csv$Fare>0]),
      main ="Histogram of Log Fare",
      xlab= "LogFare",
@@ -261,10 +451,10 @@ cor(titanic_csv$Age, titanic_csv$Fare,
 cor(titanic_csv$Age, titanic_csv$Fare, method = "spearman",
     use = "complete.obs")
 
-model<- lm(Fare~Age,data = titanic_csv)
+model<- lm(Fare~Age,data = Data)
 abline(model,
        col = "green")
-
+model
 
 #===== Categorical graphs===#
 Fare_table <- table(titanic_csv$Fare)
