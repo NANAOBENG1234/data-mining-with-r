@@ -33,13 +33,37 @@ rowSums(Drivers)
 colSums(Drivers)
 
 
-#creating a data frame we use data.frame
+African_studies <-matrix(c(12,43,43,56,6,
+                  12,43,76,78,90,
+                  34,32,1,25,65),
+                   nrow = 3 , ncol = 5, byrow = TRUE)
+colnames(African_studies)<-c("Nana obeng", "Princess", "Sammy","Kwarko", "Galaxy")
+rownames(African_studies)<-c("WKinput", "Performance", "Availability")
+
+Nana_Obeng<-matrix(c(1,2,3,4,
+                     3,4,7,6,
+                     4,9,10,11),
+                   nrow = 3 , ncol = 4, byrow= TRUE)
+colnames(Nana_Obeng)<-c("Agyeman", "Obeng", "Benedict", "Nana")
+rownames(Nana_Obeng)<-c("Laerning", "R","Almost done")
+
+African_studies#creating a data frame we use data.frame
 kev<-data.frame(
   age = c(20,21,23,34,54,NA),
   Gender = c("M", "F","M","F","M","M"),
   BloodType = c("A" , "BB", "AA", "O","B","AB"),
   Recovered =c(TRUE,FALSE,TRUE,FALSE,TRUE,TRUE),
   row.names=c("P1" ,"P2","P3","P4","P5","P6")
+)
+Agyeman
+
+Agye<-data.frame(
+  age = c(10,14,24),
+  height = c(14.5, 54.2,"NA"),
+  SCORE =c(90,78,100),
+  rownames(nana_OBENG)=c("P1", "P2","P3"),
+  colnames(nana_OBENG)=c("performance", "Art", "Workload")
+  
 )
 
 str(kev)
