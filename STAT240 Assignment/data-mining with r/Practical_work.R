@@ -61,10 +61,114 @@ Agye<-data.frame(
   age = c(10,14,24),
   height = c(14.5, 54.2,"NA"),
   SCORE =c(90,78,100),
-  rownames(nana_OBENG)=c("P1", "P2","P3"),
-  colnames(nana_OBENG)=c("performance", "Art", "Workload")
-  
+  row.names=c("P1", "P2","P3")
+  )
+Agye
+
+
+
+
+ralph<-data.frame(
+  Course=c("General Art", "Bussiness", "Int Science" ),
+  Grade =c( "A","B", "B+" ),
+  prefered_prog=c("Political science", "Bussiness", "Art"),
+  row.names=c("Year1","Year2" ,"Year3")
 )
+str(ralph)
+summary(ralph)
+ralph$Course
+ralph[, "Grade"]
+
+file.choose()
+Tab1<-read.csv( "C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.csv")
+str(Tab1)
+summary(Tab1)
+dim(Tab1)
+dim(Fare)
+Tab1$Fare
+names(Tab1$Fare)
+
+?hist
+hist(Tab1$Fare, main = "Histogram of Data from Fare",
+     xlab = "Fare",
+     ylab = "Ages",
+     xlim= c(0,580),
+     ylim = c(0,800),
+     col=c("brown","black","red","blue"))
+
+?plot
+plot(Tab1$Age,Tab1$Fare, main= " A scatter Diagram of FARE and AGE",
+     xlab ="Fare(in $)",
+     ylab = "Age",
+     xlim = c(0, 100),
+     ylim = c(0,350),
+     col = "blue")
+
+boxplot(Tab1$Age,
+        main = " Boxplot of Ages in the Dataset",
+       xlab ="Fare", 
+       col= "orange")
+
+
+
+
+##===========solving exam typoed questions =====##
+
+#a) 
+Score <- c(68,75,82,91,NA,74,88,NA,95,61)
+Score
+#OUTPUT
+#[1] 68 75 82 91 NA 74 88 NA 95 61
+
+#B)
+length(Score)
+#OUTPUT
+#[1] 10
+mean(Score, na.rm = TRUE)
+#OUTPUT
+#[1] 79.25
+min(Score,na.rm=TRUE)
+#OUTPUT
+#[1] 61
+max(Score, na.rm=TRUE)
+#OUTPUT
+#[1] 95
+
+#C)
+is.na(Score)
+#OOTPUT
+# [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
+
+sum(is.na(Score))
+#OUTPUT
+#[1] 2
+
+#D)
+Student<-c(Score <= 80)
+Student
+#OUTPUT
+# [1]  TRUE  TRUE FALSE FALSE    NA  TRUE FALSE    NA FALSE  TRUE
+
+
+#E)
+sort.int(Score, decending = TRUE, na.rm =TRUE)
+
+
+#f)
+Score_clean<-Score[!is.na(Score)]
+score_clean
+#OUTPUT
+#[1] 68 75 82 91 74 88 95 61
+
+
+
+#g
+
+
+
+
+
+
 
 str(kev)
 summary(kev)
