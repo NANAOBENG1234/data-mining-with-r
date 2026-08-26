@@ -75,7 +75,10 @@ max(ages)
    
    #QUESTION 3
  #A)   
-
+Drivers<- matrix(c(12, 15, 9,14,
+                   10,11,13,8,
+                   16,9,12,10 ),
+           nrow=3,  byrow = TRUE )
   
 #Output : 
 #[,1] [,2] [,3] [,4]
