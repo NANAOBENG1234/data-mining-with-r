@@ -33,7 +33,21 @@ rowSums(Drivers)
 colSums(Drivers)
 
 
-#creating a data frame we use data.frame
+African_studies <-matrix(c(12,43,43,56,6,
+                  12,43,76,78,90,
+                  34,32,1,25,65),
+                   nrow = 3 , ncol = 5, byrow = TRUE)
+colnames(African_studies)<-c("Nana obeng", "Princess", "Sammy","Kwarko", "Galaxy")
+rownames(African_studies)<-c("WKinput", "Performance", "Availability")
+
+Nana_Obeng<-matrix(c(1,2,3,4,
+                     3,4,7,6,
+                     4,9,10,11),
+                   nrow = 3 , ncol = 4, byrow= TRUE)
+colnames(Nana_Obeng)<-c("Agyeman", "Obeng", "Benedict", "Nana")
+rownames(Nana_Obeng)<-c("Laerning", "R","Almost done")
+
+African_studies#creating a data frame we use data.frame
 kev<-data.frame(
   age = c(20,21,23,34,54,NA),
   Gender = c("M", "F","M","F","M","M"),
@@ -41,6 +55,307 @@ kev<-data.frame(
   Recovered =c(TRUE,FALSE,TRUE,FALSE,TRUE,TRUE),
   row.names=c("P1" ,"P2","P3","P4","P5","P6")
 )
+Agyeman
+
+Agye<-data.frame(
+  age = c(10,14,24),
+  height = c(14.5, 54.2,"NA"),
+  SCORE =c(90,78,100),
+  row.names=c("P1", "P2","P3")
+  )
+Agye
+
+
+
+
+ralph<-data.frame(
+  Course=c("General Art", "Bussiness", "Int Science" ),
+  Grade =c( "A","B", "B+" ),
+  prefered_prog=c("Political science", "Bussiness", "Art"),
+  row.names=c("Year1","Year2" ,"Year3")
+)
+str(ralph)
+summary(ralph)
+ralph$Course
+ralph[, "Grade"]
+
+file.choose()
+Tab1<-read.csv( "C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.csv")
+str(Tab1)
+summary(Tab1)
+dim(Tab1)
+dim(Fare)
+Tab1$Fare
+names(Tab1$Fare)
+
+?hist
+hist(Tab1$Fare, main = "Histogram of Data from Fare",
+     xlab = "Fare",
+     ylab = "Ages",
+     xlim= c(0,580),
+     ylim = c(0,800),
+     col=c("brown","black","red","blue"))
+
+?plot
+plot(Tab1$Age,Tab1$Fare, main= " A scatter Diagram of FARE and AGE",
+     xlab ="Fare(in $)",
+     ylab = "Age",
+     xlim = c(0, 100),
+     ylim = c(0,350),
+     col = "blue")
+
+boxplot(Tab1$Age,
+        main = " Boxplot of Ages in the Dataset",
+       xlab ="Fare", 
+       col= "orange")
+
+
+
+
+##===========solving exam typoed questions =====##
+
+#a) 
+Score <- c(68,75,82,91,NA,74,88,NA,95,61)
+Score
+#OUTPUT
+#[1] 68 75 82 91 NA 74 88 NA 95 61
+
+#B)
+length(Score)
+#OUTPUT
+#[1] 10
+mean(Score, na.rm = TRUE)
+#OUTPUT
+#[1] 79.25
+min(Score,na.rm=TRUE)
+#OUTPUT
+#[1] 61
+max(Score, na.rm=TRUE)
+#OUTPUT
+#[1] 95
+
+#C)
+is.na(Score)
+#OOTPUT
+# [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
+
+sum(is.na(Score))
+#OUTPUT
+#[1] 2
+
+#D)
+Student<-c(Score <= 80)
+Student
+#OUTPUT
+# [1]  TRUE  TRUE FALSE FALSE    NA  TRUE FALSE    NA FALSE  TRUE
+
+
+#E)
+sort.int(Score, decending = TRUE, na.rm =TRUE)
+
+
+#f)
+Score_clean<-Score[!is.na(Score)]
+score_clean
+#OUTPUT
+#[1] 68 75 82 91 74 88 95 61
+
+
+
+#g)
+mean(Score_clean)
+#[1] 79.25
+
+
+#H
+
+
+#Q2
+
+#A)
+customer<-matrix(c(18,21,16,20,
+                 25,19,22,24,
+                 15,23,20,17),
+                 nrow = 3, byrow =TRUE)
+rownames(customer)=c("Employee 1","Employee 2","Employee 3")
+colnames(customer)=c("Monday","Tuesday","Wednesday","Thurday")
+
+customer
+#           Monday Tuesday Wednesday Thurday
+#Employee 1     18      21        16      20
+#Employee 2     25      19        22      24
+#Employee 3     15      23        20      17
+
+#b)
+rowSums(customer)
+
+#Employee 1 Employee 2 Employee 3 
+#75         90         75 
+
+colSums(customer)
+# Monday   Tuesday Wednesday   Thurday 
+# 58        63        58        61 
+
+
+x<-t(customer)
+
+#          Employee 1 Employee 2 Employee 3
+#Monday            18         25         15
+#Tuesday           21         19         23
+#Wednesday         16         22         20
+#Thurday           20         24         17
+
+dim(x)
+#[1] 4 3
+
+
+#E)
+employees<-data.frame(
+  age =c(24,31,27),
+  Department =c("Sales","Marketing","Sales"),
+  Sactisfaction =c("High","Medium", "Low"),
+  row.names=c("E1","E2","E3")
+)
+
+employees
+#age Department Sactisfaction
+#E1  24      Sales          High
+#E2  31  Marketing        Medium
+#E3  27      Sales           Low
+
+str(employees)
+#'data.frame':	3 obs. of  3 variables:
+#$ age          : num  24 31 27
+#$ Department   : chr  "Sales" "Marketing" "Sales"
+#$ Sactisfaction: chr  "High" "Medium" "Low"
+
+summary(employees)
+
+#age            Department   Sactisfaction
+#Min.   :24.00   Length   :3    Length   :3    
+#1st Qu.:25.50   N.unique :2    N.unique :3    
+#Median :27.00   N.blank  :0    N.blank  :0    
+#Mean   :27.33   Min.nchar:5    Min.nchar:3    
+#3rd Qu.:29.00   Max.nchar:9    Max.nchar:6    
+#Max.   :31.00
+
+Satisfacction<-c("High","Medium","Low","High")
+Sat_factor<-factor(Satisfacction, levels=c("Low","Medium","High"), ordered = TRUE)
+#[1]1] High   Medium Low   
+#Levels: Low < Medium < High
+table(Sat_factor)
+#   Low Medium   High 
+#1      1      2 
+
+
+Sat_factor > "Low"
+#[1]  TRUE  TRUE FALSE  TRUE
+as.numeric(Sat_factor)
+
+
+
+
+
+
+
+file.choose()
+Data<-read.delim("C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.txt")
+names(Data)
+dim(Data)
+summary(Data)
+
+
+hist(Data$Age,
+     main = "A histogram of Age in the Data set",
+     xlab= "Ages",
+     ylab ="Frequency",
+     col =c("red", "black", "orange"),
+     xlim=c(0,100),
+     ylim = c(0,300)
+     
+     )
+
+boxplot(Data$Fare)
+plot(Data$Fare,Data$Age)
+
+
+
+#graph
+
+
+Scores<-c(45,52,67,71,58,83,76,91,64,55,72,88,49,61,79,68,95,57,73,84)
+
+Scores
+#[1] 45 52 67 71 58 83 76 91 64 55 72 88 49 61 79 68 95 57 73 84
+
+hist(Scores, main ="A Histogram of recorded Scores",
+     xlab = "Scores",
+     ylab = "Student",
+     xlim = c(30,120),
+     ylim=c(0,8),
+     col = c("brown",'red', "black","orange"))
+
+
+
+#the histogram display the relationship between the student and their scores , with the scores linked with range of students 
+
+boxplot(Scores,main= "A Boxplot of Recorded Scores",
+        col = "blue",
+        horizontal = TRUE,
+        xlab = "Scores"
+        )
+
+summary(Scores)
+
+
+
+
+
+?barplot
+barplot(Scores
+       
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Student<-data.frame(
+  StudyHours=c(2,3,4,5,5,6,7,8,9,10),
+  Score=c(48,55,61,65,70,72,78,81,88,92),
+  Gender =c("F", "M","F","M","F","M",
+            "F","M","F","M"),
+  row.names = c("S1","S2","S3","S4","S5","S6","S7","S8","S9","S10")
+)
+Student
+
+
+
+plot(Student$StudyHours, Student$Score, main= "scatter plot showing the relationship between Studyhours and Score",
+     col = "orange",
+     xlab = "Study hours",
+     ylab = " Score",
+abline(lm(Score ~ StudyHours, data = Student))
+)
+
+
+
+
+
+
+
+
 
 str(kev)
 summary(kev)
@@ -101,6 +416,9 @@ col =c( "red","blue", "yellow","orange", "black", "purple")
 )
 
 
+
+
+
 hist(log(titanic_csv$Fare[titanic_csv$Fare>0]),
      main ="Histogram of Log Fare",
      xlab= "LogFare",
@@ -133,10 +451,10 @@ cor(titanic_csv$Age, titanic_csv$Fare,
 cor(titanic_csv$Age, titanic_csv$Fare, method = "spearman",
     use = "complete.obs")
 
-model<- lm(Fare~Age,data = titanic_csv)
+model<- lm(Fare~Age,data = Data)
 abline(model,
        col = "green")
-
+model
 
 #===== Categorical graphs===#
 Fare_table <- table(titanic_csv$Fare)
