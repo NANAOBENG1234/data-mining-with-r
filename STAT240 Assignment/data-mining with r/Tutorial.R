@@ -1,10 +1,10 @@
-Csv file
+
 ?read.csv
 file.choose()
-titanic_csv <- read.csv("C:\\Users\\Nana Obeng\\Downloads\\Titanic-Dataset.csv")
+titanic_csv <- read.csv("C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.csv")
 
 ## Text file
-titanic_text <- read.delim("C:\\Users\\Nana Obeng\\Downloads\\Titanic-Dataset.txt")
+titanic_text <- read.delim("C:\\Users\\KC-User\\Downloads\\Titanic-Dataset.txt")
 read_excel()
 names(titanic_text )
 dim(titanic_text )
@@ -68,19 +68,18 @@ plot(titanic_text$Age ,titanic_text$Fare,
  abline(h = 250)
  abline()
  
- 
+
  library(MASS)
 names(cabbages)
 ?cabbages
   plot(cabbages$HeadWt, cabbages$VitC,
         main = "Scatter plot for HeadWt Against \n  VitC ",
        sub = "Linear Association",
-        pc =5, 
         col =  "red",
         xlab = "Weight of Cabbage Head ",
         ylab = "Ascorbic Acid Content " )
   abline(lm(VitC~HeadWt, data=cabbages),
-         ily= 3,
+         
          col = "black")
   cor(cabbages$HeadWt,cabbages$VitC)
   

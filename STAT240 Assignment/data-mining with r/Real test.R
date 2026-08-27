@@ -128,3 +128,94 @@ plot(Exam_prediction$study_hours, Exam_prediction$sleep_hours,
      col = "red",
      xlab= " Study hours",
      ylab= " Sleephours")
+
+#+===================== test 2 +==============#
+#+
+library(iris)
+summar(iris)
+names(iris)
+summary(iris)
+
+tab1<-table(iris)
+
+
+##Ploting a scatter daigram since the  we are interested in the relationship betwwen two numeric variable
+ plot(iris$Sepal.Length,iris$Petal.Length, main = " A scatter plot of sepal length and petal length",
+      xlab = " Sepal length",
+      ylab = " Petal length",
+      col = "red",
+        abline(lm(Petal.Length~Sepal.Length, data = iris)
+               ))
+      
+      cor(iris$Sepal.Length,iris$Petal.Length)
+ #from the correlation value the is a sstrong relationship betwwen sepal length and petal length
+ 
+      #  at signifi =0.05,
+      #using paired t test
+     t.test(iris$Sepal.Length,iris$Petal.Length, alternative = "two.sided", paired = TRUE)
+    TAB2<-aov(Sepal.Length~Petal.Length, data = iris)
+TAB2
+summary(TAB2)
+ # SINCE THE P VALUSE IS LESS THAN THE SIGNIFICANT VALUE , WE REJECT NULL HYPOTHESIS,
+# SINCE ANNOVA ONLY POINT TO A DIFFERENCE IN THE MEAN WE PERFORM POST HOC USING TukeyHSD
+
+hist(iris$Petal.Length)
+boxplot(iris$Petal.Length,
+        horizontal = TRUE)
+
+## the distribution is positively skiwed
+#
+table(iris$Petal.Length)
+#because bar plot is for categorical variables
+
+
+library(ToothGrowth)
+names(len)
+
+library(MASS)
+summary(anorexia)
+str(anorexia)
+names(anorexia)
+hist(anorexia$Postwt)
+qqnorm(anorexia$Postwt,
+       )
+boxplot(anorexia$Postwt)
+
+
+Tab4<-shapiro.test(anorexia$Postwt)
+summary(Tab4)
+# we fail to reject the h0 hypothesis
+
+
+#Performing a PAIRED T TEST
+#H0_:U1 = U2
+#H1_:U1!=U2
+#AT a=0.05
+
+t.test(anorexia$Prewt,anorexia$Postwt, Alternative= "two.sided", paired = TRUE)
+#SINCE THE P VALUE IS KLESS THAN THE A VALUE WE REJECT NULL HYPOTHESIS
+#PERFOMING POSTZ_HOC
+
+
+# since the 2 data are not independent
+
+
+
+
+boxplot()
+
+
+
+library(PlantGrowth)
+
+
+
+
+
+
+
+
+
+
+
+
