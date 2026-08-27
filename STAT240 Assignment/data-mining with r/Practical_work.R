@@ -633,7 +633,7 @@ loan_payment<-function(P,R,T){
     Total = total
   )
 }
-loan_payment(34,12,54)
+loan_payment(5000,8,5)
 
 ## BMI 
 

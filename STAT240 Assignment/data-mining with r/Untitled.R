@@ -136,7 +136,7 @@ t.test(cabbages$HeadWt, alternative = "less",
 t.test(cabbages$HeadWt, alternative = "two.sided", 
        mu = 3.10  )
 
-##=======For two sample T-test======
+##=======For two sample T-test/ welch two sample  test======
 
 # H0: U_c39 = U_c52
 #H1: U_c39 < U_c52
@@ -193,7 +193,25 @@ summary(Anoval)#=====This give as the exact table
 
 ##Post hoc 
 post_Hoc<-TukeyHSD(Anoval)
+summary(post_Hoc)
 plot(post_Hoc)
+
+
+
+?MASS
+library(MASS)
+names(anorexia)
+summary(anorexia)
+
+Tab1<-aov(Postwt~Prewt, data= anorexia)
+summary(Tab1)
+Tab1
+##we reject the null hypothesis
+ Alternative<-TukeyHSD(Tab1)
+plot(Alternative)
+
+
+
 
 
 
@@ -205,9 +223,12 @@ qqline(anorexia$Postwt,
       col ="red" )
 
 hist(anorexia$Postwt,
-     col = c("red", "blue", "yellow", "brown", "pink", "green", "black"))
+     col = c("red", "blue", "yellow", "brown", "pink", "green", "black"),
+     xlim = c(70, 120),
+     ylim = c(0,30))
 boxplot(anorexia$Postwt,
-        col = c("red", "blue", "yellow", "brown", "pink", "green", "black"))
+        col = "red",
+        horizontal =TRUE
 )
 summary(anorexia$Postwt)
 
@@ -220,3 +241,4 @@ boxplot(Postwt~Treat, data = anorexia,
 
 
 ##Test for catergory variable 
+

@@ -67,3 +67,36 @@ grade_student(75)
 grade_student(88)
 grade_student(100)
 
+
+
+library(anorexia)
+
+
+
+
+
+
+
+
+
+Scores <- c(45,52,67,71,63,58,80,76,49,69)
+Scores
+
+stat_summary<-function(Scores){
+  n = length(Scores)
+  mean = sum(Scores)/n
+  sd_num= c(sum(sum(Scores)/(n-Scores)))
+  sd_deno= c(length(Scores))
+  std = (sd_num/sd_deno)^0.5
+  list( Mean = mean, Standard_dev = std)
+  
+}
+
+
+Scores <- c(45,52,67,71,63,58,80,76,49,69)
+
+stat_summary(Scores)
+
+
+
+
